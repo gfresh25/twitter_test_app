@@ -1,0 +1,32 @@
+<h1>@<%= @user.username %>'s User Profile</h1>
+
+<div>
+  <%= image_tag @user.avatar.url, class: "show-pic" %> 
+</div>
+
+<div>
+
+  <p><%= @user.name %></p>
+  <p><%= @user.location %></p>
+  <p><%= @user.bio %></p>
+
+</div>
+
+
+<% if current_user.id != @user.id %> 
+  <% if current_user.following.include? @user.id %>
+    <%= link_to "unfollowing", unfollow_path(id: @user.id), class: 'btn btn-danger' %>
+  <% else %>  
+    <%= link_to 'follow', now_following_path(id: @user.id), class: 'btn btn-primary' %>
+  <% end %> 
+<% end %> 
+
+
+<div>
+  <h2><% @user.tweets.each do |tweet| %></h2>
+    <div>
+         <p><%= @user.username %></p>
+          <p><%= tweet.message %></p>
+    <% end %> 
+  </div>
+</div>
