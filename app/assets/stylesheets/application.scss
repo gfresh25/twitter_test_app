@@ -19,8 +19,6 @@
 @import 'bootstrap';
 @import 'font-awesome';
 
-/* #a4a6b2 - gray color for wells*/
-
 
 .show-pic {
   width: 200px;
@@ -35,12 +33,12 @@ body{
 
 
 .well{
-  background: #a4a6b2 ;
+  background: rgba(129, 195, 215, 1) ;
   
 }
 
 .well-doc{
-
+	
   background: white;
 }
 
@@ -49,9 +47,27 @@ height: 500px;
 
 }
 .navbar{
-  background-color: #79abe8;
+  background-color: rgba(58, 124, 165, 1);
 }
 
 .navbar-default .navbar-nav > li > a:visited, .navbar-default .navbar-brand:visited, .navbar-default .navbar-nav > li > a{
   color: white;
 }
+
+/*.navbar-brand {
+  padding: 0px;
+}*/
+.navbar-brand>img {
+  height: 100%;
+  padding: 0px;
+
+  width: auto;
+}
+
+
+/* RGB */
+/*$color1: rgba(47, 102, 144, 1);
+$color2: rgba(58, 124, 165, 1);
+$color3: rgba(217, 220, 214, 1);
+$color4: rgba(22, 66, 91, 1);
+$color5: rgba(129, 195, 215, 1);*/

@@ -30,6 +30,15 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 en:
   hello: "Hello world"
+  datetime:
+    distance_in_words:
+      x_minutes:
+        one: "1m"
+        other: "%{count}m"
+      about_x_hours:
+        one: "1m"
+        other: "%{count}h"
+
   activerecord:
     attributes:
       tweet:

@@ -1,8 +1,9 @@
 <h1>@<%= @user.username %>'s User Profile</h1>
+<center>
+<p><%= image_tag @user.avatar.url, class: "show-pic" %></p>
 
-<div>
-  <%= image_tag @user.avatar.url, class: "show-pic" %> 
-</div>
+<p><%= link_to 'Following', following_path( id: @user.id) %></p>
+<p><%= link_to 'Followers', followers_path( id: @user.id) %></p>
 
 <div>
 
@@ -12,14 +13,19 @@
 
 </div>
 
-
-<% if current_user.id != @user.id %> 
-  <% if current_user.following.include? @user.id %>
-    <%= link_to "unfollowing", unfollow_path(id: @user.id), class: 'btn btn-danger' %>
-  <% else %>  
-    <%= link_to 'follow', now_following_path(id: @user.id), class: 'btn btn-primary' %>
-  <% end %> 
-<% end %> 
+</center>
+<p>
+  <% if current_user.following.include?(@user.id) %>
+    <%= link_to "Following", unfollow_path(id: @user.id), 
+        class: "btn btn-primary", id: "unfollow_btn" %>
+  <% else %>
+    <% if current_user.id != @user.id %>
+      <%= link_to "Follow", now_following_path(id: @user.id), 
+          class: "btn btn-primary" %>
+    <% end %>
+  <% end %>
+</p>
+ 
 
 
 <div>
