@@ -6,7 +6,6 @@
 <p><%= link_to 'Followers', followers_path( id: @user.id) %></p>
 
 <div>
-
   <p><%= @user.name %></p>
   <p><%= @user.location %></p>
   <p><%= @user.bio %></p>
@@ -16,11 +15,11 @@
 </center>
 <p>
   <% if current_user.following.include?(@user.id) %>
-    <%= link_to "Following", unfollow_path(id: @user.id), 
+    <%= link_to "•Following", unfollow_path(id: @user.id), 
         class: "btn btn-primary", id: "unfollow_btn" %>
   <% else %>
     <% if current_user.id != @user.id %>
-      <%= link_to "Follow", now_following_path(id: @user.id), 
+      <%= link_to "•Follow", now_following_path(id: @user.id), 
           class: "btn btn-primary" %>
     <% end %>
   <% end %>
